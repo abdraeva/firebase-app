@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { PATH } from '../../../services/Path'
+import { PATH } from '../../../../services/Path'
 
 interface INavigate {
   location: string
@@ -10,7 +10,7 @@ interface INavigate {
 export const AuthNavigate: React.FunctionComponent<INavigate> = ({location}) => {
   return (
     <Link to={
-      location === "singIn" 
+      location === "signIn" 
       ? PATH.ConnectedAuthPath.register
       : PATH.ConnectedAuthPath.login
     }>

@@ -3,13 +3,17 @@
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { Components } from '../../../components';
+import { Components } from '../../../components/apps';
 import { FormsInstruments } from '../../../helpers/forms';
-import cls from "./index.module.scss";
 import { auth } from "../../../firebase/fierbase"
 import { Hooks } from '../../../hooks';
+
+import cls from "./index.module.scss";
+
+
 const Register: React.FunctionComponent = () => {
   const { actions } = Hooks.useRedirect();
+
   const {
     handleSubmit,
     register,
@@ -22,7 +26,7 @@ const Register: React.FunctionComponent = () => {
   const handleRegister = (data: any) => {
     createUserWithEmailAndPassword(auth, data.email, data.password)
     .then((res: any) => {
-      localStorage.setItem("accessTopken", res.user.accessToken);
+      localStorage.setItem("accessToken", res.user.accessToken);
       actions.goToLogin();
       reset();
     })
@@ -90,7 +94,7 @@ const Register: React.FunctionComponent = () => {
             </Components.Divider>
 
             <Components.Divider>
-              <Components.AuthGoogle location="singUp" />
+              <Components.AuthGoogle location="sing" />
             </Components.Divider>
 
           </form>

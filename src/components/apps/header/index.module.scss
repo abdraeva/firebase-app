@@ -9,9 +9,11 @@ header {
     border-bottom: 1px solid rgb(190, 183, 183);
 
     h2 {
-      cursor: pointer;
-      font-weight: 400;
-      color: white;
+      a {
+        cursor: pointer;
+        font-weight: 400;
+        color: white;
+      }
     }
 
     div {

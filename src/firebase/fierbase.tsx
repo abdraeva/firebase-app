@@ -21,7 +21,7 @@ const auth = getAuth(app);
 
 const joinWithGoogle = new GoogleAuthProvider();
 
-export{
+export {
   auth,
   joinWithGoogle
 }
